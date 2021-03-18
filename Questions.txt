@@ -21,3 +21,72 @@
 
         The order of the ranks and pointValues have to sorrospond so cards 
         have the correct point values but the order of suits does not matter.
+
+3.1: Write a static method named flip that simulates a flip of a weighted coin.
+
+        import java.lang.Math
+
+        public static String flip()
+        {
+                //because odds are 2:1 then a number will need to be genereated
+                //between 1 and 3. If the number is 1 or 2 then heads otherwise 
+                //tails.
+
+                int num = (int) (Math.Random() * (3));
+
+                if(num == 1 || num == 2)
+                {
+                        return "Heads";
+                }
+                if(num == 3)
+                {
+                        return "Tails";
+                }
+        }
+
+3.2: Write a static method named arePermutations that, given two int arrays of 
+     the same length but with no duplicate elements, returns true.
+
+        public static boolean arePermutations(int[] Arr1, int[] Arr2)
+        {
+                if(Arr1.length != Arr2.length)
+                {
+                        return false;
+                }
+
+                int temp1 = Integer.MIN_VALUE;
+                int temp2 = Integer.MIN_VALUE;
+                for(int i = 0; i < Arr1.length; i++)
+                {
+                        for(int j = 0; j < Arr1.length - 1; i++)
+                        {
+                                if(Arr1[j] < Arr1[j+1])
+                                {
+                                        temp1 = Arr1[j];
+                                        Arr1[j] = Arr1[j+1];
+                                        Arr1[j+1] = temp1;
+                                }
+                                if(Arr2[j] < Arr2[j+1])
+                                {
+                                        temp2 = Arr2[j];
+                                        Arr2[j] = Arr2[j+1];
+                                        Arr2[j+1] = temp2;
+                                }
+                        }
+                }
+
+                for(int i = 0; i < Arr1.length; i++)
+                {
+                        if(arr1[j] != arr2[j])
+                        {
+                                return false;
+                        }
+                }
+                return true;
+        }
+
+3.3: Suppose that the initial contents of thevalues array inShuffler.java 
+     are {1, 2, 3, 4}.For what sequence of random integers would the efficient 
+     selection shuffle changevalues to contain {4, 3, 2, 1}?
+
+     The most efficient selection pairs would be the positions (0,3) and (1,2).
