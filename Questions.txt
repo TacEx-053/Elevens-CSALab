@@ -1,0 +1,23 @@
+2.1: Explain in your own words the relationship between a deck and a card.
+
+        A card is part of the deck while a deck contains all of the cards. With
+        the is-a test: a deck is a card but a card is not a deck.
+
+2.2: Consider the deck initialized with the statements below. How many cards 
+     does the deck contain?
+
+        The constructor will loop until all ranks have been assigned all suits.
+        After the constructor is finished there will be 6 cards.
+
+2.3: Specify the contents of theranks,suits,andpointValuesarrays so that the 
+     deck constructor call initializes a deck for a Twenty-One game.
+
+        String[] ranks = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                          "J", "Q", "K"}
+        String[] suits = {"Diamonds", "Hearts", "Clubs", "Spades"}
+        int[] pointValues = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10}
+
+2.4: Does the order of elements of theranks,suits,andpointValuesarrays matter?
+
+        The order of the ranks and pointValues have to sorrospond so cards 
+        have the correct point values but the order of suits does not matter.
