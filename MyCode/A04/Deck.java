@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Deck
 {
    private List<Card> deck;
-   private int size;
+   private int size = 0;
 
    public Deck(String[] ranks, String[] suits, int[] pointValues)
    {
@@ -17,6 +17,26 @@ public class Deck
             deck.add(new Card(ranks[i], suit, pointValues[i]));
          }
       }
+      size = deck.size();
+
+      shuffle();
+   }
+
+   public static void shuffle()
+   {
+      int count = deck.size();
+
+      for(int i = count - 1; i > 0; i--)
+      {
+         int  loc = (int) (Math.random() * (size));
+         Card tmp = deck.get(loc);
+
+         deck.set(loc, deck.get(i));
+         deck.set(deck.get(i), tmp);
+
+      }
+
+      size = deck.size();
    }
 
    public Card deal()
